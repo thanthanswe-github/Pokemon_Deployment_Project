@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+  
+  <meta charset="UTF-8">
+  <title>Hello ! Welcome To Pokemon </title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+ <head>
+  <style>
+  body {
+  /*background-image: url("/pokemon.png");*/
+  background-color: : black;
+  
+  background-image:url('https://cdn.bulbagarden.net/upload/a/a7/PSMD_poster.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+::placeholder { /* Firefox, Chrome, Opera */ 
+    color: yellow; 
+    font-size:15px;
+} 
+
+</style>
+</head>     
+
+<body>
+ <div class="login">
+	<h2 style="color:black" >Welcome, Pokemon</h2>
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="hp" placeholder="Hit Point" autocomplete="Open" required="required" />
+    	<input type="text" name="attack" placeholder="Attack" autocomplete="Open" required="required" />
+    	<input type="text" name="defense" placeholder="Defense" autocomplete="Open" required="required" />
+    	<input type="text" name="sp_atk" placeholder="Special Attack" autocomplete="Open" required="required" />
+    	<input type="text" name="sp_def" placeholder="Special Defense" autocomplete="Open" required="required" />
+    	<input type="text" name="speed" placeholder="Speed" autocomplete="Open" required="required" />
+    <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+   <h3 style="color: black">{{ pokemon_predict }}</h3>
+   
+   </script>
+ 
+ </div>
+
+
+</body>
+</html>
